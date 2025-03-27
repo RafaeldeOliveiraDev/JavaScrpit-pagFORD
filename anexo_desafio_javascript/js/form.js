@@ -1,27 +1,44 @@
 
 //class contato
 
-class contato {
-    
-}
+class Contato {
 
-function Post(form) {
-
-  let data = new contato(form.elements.namedItem("nome").value,
-            form.elements.namedItem("sobrenome").value, 
-            form.elements.namedItem("email").value, 
-            form.elements.namedItem("cpf").value, 
-            form.elements.namedItem("telefone").value, 
-            form.elements.namedItem("contato").value);
-  
-}
-
-function Enviar() {
-
-    var nome = document.getElementById("nomeid");
-
-    if (nome.value != "") {
-        alert('Obrigado sr(a) ' + nome.value + ' os seus dados foram encaminhados com sucesso');
+    constructor(nome, sobrenome, email, cpf, telefone, contato){
+        this.nome = nome
+        this.sobrenome = sobrenome
+        this.email = email
+        this.cpf = cpf
+        this.telefone = telefone
+        this.contato = contato
     }
 
+}
+
+function Post(form){
+    const nome = form.nome.value;
+    const sobrenome = form.nome.value;
+    const email = form.email.value;
+    const cpf = form.cpf.value;
+    const telefone = form.telefone.value;
+    const contato = form.contato.value;
+
+    let data = new Contato(nome, sobrenome, email, cpf, telefone, contato);
+
+    Enviar(nome)
+
+    Event.preventDefault();
+}
+
+function Enviar(nome) {
+
+    let nome = document.getElementById("nome").value;
+
+    if (nome == "") {
+       alert('Por favor, preencha todos os campos!');
+       return;
+    
+    }else{
+       alert('Obrigado sr(a) ' + nome + ' os seus dados foram encaminhados com sucesso');
+    }
+  
 }
