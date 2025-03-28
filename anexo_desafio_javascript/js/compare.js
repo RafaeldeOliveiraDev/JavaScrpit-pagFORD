@@ -1,52 +1,37 @@
-
-//car
 let carArr = [];
 
 class Car {
-   
-
-    constructor(nome, preco, alturaCacamba, alturaVeiculo, alturaSolo, capacidadeCarga, motor, potencia, volumeCacamba, roda, image){
-       
-    }
-} 
-
-// search on array if exist carClass returning 1 if not return -1
-function GetCarArrPosition(arr, carClass) {
-    for(let i = 0; i < arr.length; i++){
-        if(arr[i].nome  === carClass.nome)
-            return i;
-    }
-    return -1;
+    constructor(modelo, preco, alturaCacamba, alturaVeiculo, alturaSolo, carga, motor, potencia, volumeCacamba, roda, imagem) {
+        this._modelo = modelo
+        this._preco = preco
+        this._alturaCacamba = alturaCacamba
+        this._alturaVeiculo = alturaVeiculo
+        this._alturaSolo = alturaSolo
+        this._carga = carga
+        this._motor = motor
+        this._potencia = potencia
+        this._volumeCacamba = volumeCacamba
+        this._roda = roda
+        this._imagem = imagem
+     }
 }
 
-function SetCarToCompare(el, carClass) {
-   
-    if(carClass instanceof Car){       
-        if(el.checked){
-                
-            
-        } else {
-          
-        } 
-    } else {
-        throw "You need set a Car Class";
+function SetCarToCompare(checkbox, car){
+    if(checkbox.checked){
+        carArr.push(car)
     }
 }
 
-function ShowCompare() {
-    if(carArr.length < 2) {
-        alert("Precisa marcar 2 carros para apresentar a comparação");
-        return;
-    }
+function ShowCompare(){
+    
+    // exibe a div da tabela
+    document.getElementById('compare').style.display = 'block';
 
-    UpdateCompareTable();
-    document.getElementById("compare").style.display = "block";
+
 }
 
 function HideCompare(){
-    document.getElementById("compare").style.display = "none"; 
-}
+    // esconde a div da tabela
+    document.getElementById('compare').style.display = 'none';
 
-function UpdateCompareTable() {
-    
 }

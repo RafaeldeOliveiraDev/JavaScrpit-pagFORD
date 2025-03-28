@@ -33,7 +33,7 @@ function Enviar(nome) {
 
     let nome = document.getElementById("nome").value;
 
-    if (nome == "") {
+    if (nome.value == "") {
        alert('Por favor, preencha todos os campos!');
        return;
     
