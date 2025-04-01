@@ -9,7 +9,7 @@
     <link href="css/reset.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <link href="css/form.css" rel="stylesheet">
-    <script src="js/form.js"></script>
+    
 </head>
 
 <body>
@@ -40,15 +40,15 @@
             <div>
                 <h2 class="titulo">Sobre Você</h2>
 
-                <form onsubmit="Post(this);">
+                <form onsubmit="Post(event, this);">
                     <input id="nome" type="text" name="nome" placeholder="NOME*" class="fordform" required>
                     <input id="email" type="email" name="email" placeholder="E-MAIL*" class="fordform" required>
                     <input id="cpf" type="number" name="cpf" placeholder="CPF*" class="fordform" required>
                     <input id="sobrenome" type="text" name="sobrenome" placeholder="SOBRENOME*" class="fordform" required>
                     <input id="telefone" type="tel" name="telefone" placeholder="TELEFONE*" class="fordform" required>
                     <select id="contato" name="contato" class="fordform" required>
-                        <option selected>COMO DESEJA SER CONTATADO</option>
-                        <option>TELEFONE</option>
+                        <option selected disable value="">COMO DESEJA SER CONTATADO</option>
+                        <option >TELEFONE</option>
                         <option>E-MAIL</option>
                     </select>
                     <button type="submit">Enviar</button>
@@ -69,6 +69,8 @@
             <img src="img/ford-96.png" width="70" />
         </div>
     </footer>
+
+    <script src="./js/form.js"></script>
 </body>
 
 </html>
